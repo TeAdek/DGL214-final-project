@@ -10,7 +10,13 @@ import UIKit
 class GroceryListViewController: UITableViewController, UISearchBarDelegate{
     let data = ["Apple", "Orange", "Milk"]
     
-    private let searchVC = UISearchController(searchResultsController: nil)
+    let searchController: UISearchController = {
+        let vc = UISearchController(searchResultsController: SearchResultsViewController())
+        vc.searchBar.placeholder = "Add to list"
+        vc.definesPresentationContext = true
+        return vc
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,14 +40,26 @@ class GroceryListViewController: UITableViewController, UISearchBarDelegate{
     
     private func createSearchBar(){
         navigationItem.hidesSearchBarWhenScrolling = false
-        navigationItem.searchController = searchVC
-        searchVC.searchBar.delegate = self
+        navigationItem.searchController = searchController
+        searchController.searchBar.delegate = self
     }
    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let text = searchBar.text, !text.isEmpty else {
+        guard let resultsController = searchController.searchResultsController as? SearchResultsViewController,
+        let query = searchBar.text, !query.isEmpty else {
             return
         }
-        print(text)
+        APICaller.shared.search(with: query){ result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let results):
+                    resultsController.update(with: results)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+            
+        }
+        print(query)
     }
 }

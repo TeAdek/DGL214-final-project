@@ -16,7 +16,9 @@ final class APICaller {
     
     private init() {}
     
-    public func search(with query: String, completion: @escaping (Result<[String], Error>) -> Void) {
+    // Mark: - Search
+    
+    public func search(with query: String, completion: @escaping (Result<[SearchResult], Error>) -> Void) {
         guard !query.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
         }
@@ -32,10 +34,15 @@ final class APICaller {
             else if let data = data {
                 do{
                     let result = try JSONDecoder().decode(APIResponse.self, from: data)
+                    var searchResults: [SearchResult] = []
+                    searchResults.append(contentsOf: result.products.compactMap({.product(model: $0)}))
                     
+                    completion(.success(searchResults))
                     print("Grocery: \(result.products.count)")
+                    print(result)
                 }
                 catch{
+                    print(error.localizedDescription)
                     completion(.failure(error))
                 }
             }
