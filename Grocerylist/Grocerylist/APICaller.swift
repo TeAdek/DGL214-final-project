@@ -18,7 +18,7 @@ final class APICaller {
     
     // Mark: - Search
     
-    public func search(with query: String, completion: @escaping (Result<[SearchResult], Error>) -> Void) {
+    public func search(with query: String, completion: @escaping (Result<[GroceryProducts], Error>) -> Void) {
         guard !query.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
         }
@@ -34,8 +34,8 @@ final class APICaller {
             else if let data = data {
                 do{
                     let result = try JSONDecoder().decode(APIResponse.self, from: data)
-                    var searchResults: [SearchResult] = []
-                    searchResults.append(contentsOf: result.products.compactMap({.product(model: $0)}))
+                    let searchResults: [GroceryProducts] = result.products.compactMap({GroceryProducts( name: $0.title, identifer: $0.id)})
+//                    searchResults.append(contentsOf: result.products.compactMap({.product(model: $0)}))
                     
                     completion(.success(searchResults))
                     print("Grocery: \(result.products.count)")

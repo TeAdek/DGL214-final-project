@@ -9,7 +9,7 @@ import UIKit
 
 class SearchResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    private var results: [SearchResult] = []
+    private var results: [GroceryProducts] = []
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -31,7 +31,7 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.frame = view.bounds
     }
     
-    func update(with results: [SearchResult]) {
+    func update(with results: [GroceryProducts]) {
         self.results = results
         tableView.reloadData()
         tableView.isHidden = results.isEmpty
@@ -43,8 +43,11 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "Foo"
+        cell.textLabel?.text = results[indexPath.row].name
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
