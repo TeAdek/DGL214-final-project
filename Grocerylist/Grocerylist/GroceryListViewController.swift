@@ -15,6 +15,7 @@ class GroceryListViewController: UITableViewController, UISearchBarDelegate{
         vc.searchBar.placeholder = "Add to list"
         vc.definesPresentationContext = true
         return vc
+        
     }()
     
     
@@ -38,6 +39,7 @@ class GroceryListViewController: UITableViewController, UISearchBarDelegate{
         return cell
     }
     
+   
     private func createSearchBar(){
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController = searchController

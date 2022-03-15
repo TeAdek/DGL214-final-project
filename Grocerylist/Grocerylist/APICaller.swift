@@ -11,7 +11,8 @@ final class APICaller {
     static let shared = APICaller()
     
     struct Constants {
-        static let searchGroceryListsURL =  "https://api.spoonacular.com/food/products/search?apiKey=57cb9491b0284d8da6f8727dc4857f1b&query="
+        static let searchGroceryListsURL = "https://api.spoonacular.com/food/products/suggest?apiKey=57cb9491b0284d8da6f8727dc4857f1b&number=5&query="
+       
     }
     
     private init() {}
@@ -34,11 +35,9 @@ final class APICaller {
             else if let data = data {
                 do{
                     let result = try JSONDecoder().decode(APIResponse.self, from: data)
-                    let searchResults: [GroceryProducts] = result.products.compactMap({GroceryProducts( name: $0.title, identifer: $0.id)})
-//                    searchResults.append(contentsOf: result.products.compactMap({.product(model: $0)}))
-                    
+                    let searchResults: [GroceryProducts] = result.results.compactMap({GroceryProducts( name: $0.title, identifer: $0.id)})
                     completion(.success(searchResults))
-                    print("Grocery: \(result.products.count)")
+                    print("Grocery: \(result.results.count)")
                     print(result)
                 }
                 catch{

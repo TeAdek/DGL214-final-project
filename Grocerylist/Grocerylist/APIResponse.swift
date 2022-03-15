@@ -8,10 +8,11 @@
 import Foundation
 
 struct APIResponse: Codable{
-    let products: [Product]
+    let results: [Product]
 }
 
 struct Product: Codable{
     let id: Int
     let title: String
 }
+
