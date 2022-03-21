@@ -85,13 +85,6 @@ enum Products {
       saveAllGroceryLists()
     }
     
-//    static func reorderGroceryList(productToMove: GroceryProducts, productAtDestination: GroceryProducts) {
-//        let destinationIndex = Products.groceries.firstIndex(of: productAtDestination)
-//      groceries.removeAll(where: { $0.name == productToMove.name })
-//        groceries.insert(productToMove, at: destinationIndex)
-//      saveAllGroceryLists()
-//    }
-    
 }
 
 extension FileManager {
