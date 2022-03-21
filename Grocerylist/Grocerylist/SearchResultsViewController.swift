@@ -41,11 +41,13 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
         results.count
     }
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        let result = results[indexPath.row]
-//        print("ANSWER \(result)")
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let result = results[indexPath.row]
+        print("ANSWER \(result.name)")
+        Products.addNew(grocery: GroceryProducts(name: result.name, identifer: result.identifer, categories: false))
+        navigationController?.popViewController(animated: true)
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)

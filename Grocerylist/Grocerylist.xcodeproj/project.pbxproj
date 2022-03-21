@@ -21,6 +21,7 @@
 		4684D36D27D9F0BD009B1830 /* GroceryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4684D36C27D9F0BD009B1830 /* GroceryListViewController.swift */; };
 		4684D37327DA68AB009B1830 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4684D37227DA68AB009B1830 /* SearchResultsViewController.swift */; };
 		4684D37727DA848C009B1830 /* GroceryProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4684D37627DA848C009B1830 /* GroceryProducts.swift */; };
+		469894A927E139CE0010C2DF /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469894A827E139CE0010C2DF /* Products.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		4684D36C27D9F0BD009B1830 /* GroceryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListViewController.swift; sourceTree = "<group>"; };
 		4684D37227DA68AB009B1830 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		4684D37627DA848C009B1830 /* GroceryProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryProducts.swift; sourceTree = "<group>"; };
+		469894A827E139CE0010C2DF /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				4684D32C27D9CB5A009B1830 /* APIResponse.swift */,
 				4684D37227DA68AB009B1830 /* SearchResultsViewController.swift */,
 				4684D37627DA848C009B1830 /* GroceryProducts.swift */,
+				469894A827E139CE0010C2DF /* Products.swift */,
 			);
 			path = Grocerylist;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			files = (
 				4684D2FF27D9804A009B1830 /* ViewController.swift in Sources */,
 				4684D37327DA68AB009B1830 /* SearchResultsViewController.swift in Sources */,
+				469894A927E139CE0010C2DF /* Products.swift in Sources */,
 				4684D2FB27D9804A009B1830 /* AppDelegate.swift in Sources */,
 				4684D36D27D9F0BD009B1830 /* GroceryListViewController.swift in Sources */,
 				4684D2FD27D9804A009B1830 /* SceneDelegate.swift in Sources */,

@@ -35,7 +35,8 @@ final class APICaller {
             else if let data = data {
                 do{
                     let result = try JSONDecoder().decode(APIResponse.self, from: data)
-                    let searchResults: [GroceryProducts] = result.results.compactMap({GroceryProducts( name: $0.title, identifer: $0.id)})
+                    //QUESTION???
+                    let searchResults: [GroceryProducts] = result.results.compactMap({GroceryProducts( name: $0.title, identifer: $0.id, categories: true)})
                     completion(.success(searchResults))
                     print("Grocery: \(result.results.count)")
                     print(result)

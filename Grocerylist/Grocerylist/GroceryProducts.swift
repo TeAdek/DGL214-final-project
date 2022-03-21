@@ -6,7 +6,18 @@
 //
 
 import Foundation
-struct GroceryProducts {
+
+struct GroceryProducts: Hashable{
     let name: String
     let identifer: Int
+    let categories: Bool
+
+}
+
+extension GroceryProducts: Codable, Equatable{
+    enum CodingKeys: String, CodingKey {
+        case name
+        case identifer
+        case categories
+    }
 }
