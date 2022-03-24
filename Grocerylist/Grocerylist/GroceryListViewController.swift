@@ -19,7 +19,9 @@ enum Section: String, CaseIterable{
 
 class GroceryListViewController: UITableViewController, UISearchBarDelegate{
     
+    @IBOutlet var groceryName: UILabel!
     var dataSource: ProductDataSource!
+    var folder: Folders
     
     let searchController: UISearchController = {
         let vc = UISearchController(searchResultsController: SearchResultsViewController())
@@ -35,6 +37,8 @@ class GroceryListViewController: UITableViewController, UISearchBarDelegate{
         createSearchBar()
         configureDataSource()
         dataSource.applySnapshot(animatingDifferences: false)
+        groceryName.text = folder.products
+        folder.products.forEach{product in groceryName.text = product.name}
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,7 +54,7 @@ class GroceryListViewController: UITableViewController, UISearchBarDelegate{
         fatalError("This should never be called!")
     }
     
-    init?(coder: NSCoder, folder: GroceryFolder){
+    init?(coder: NSCoder, folder: Folders){
         self.folder = folder
         super.init(coder: coder)
     }
