@@ -18,10 +18,14 @@ enum Section: String, CaseIterable{
 }
 
 class GroceryListViewController: UITableViewController, UISearchBarDelegate{
+//    var dataSource: ProductDataSource!
+    var grocery: [GroceryProducts]
+//    @IBOutlet var groceryName: UILabel!
     
-    @IBOutlet var groceryName: UILabel!
-    var dataSource: ProductDataSource!
-    var folder: Folders
+    // MARK: - Value Types
+    typealias ProductDataSource = UITableViewDiffableDataSource<Section, GroceryProducts>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, GroceryProducts>
+    private lazy var dataSource = configureDataSource()
     
     let searchController: UISearchController = {
         let vc = UISearchController(searchResultsController: SearchResultsViewController())
@@ -35,10 +39,8 @@ class GroceryListViewController: UITableViewController, UISearchBarDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         createSearchBar()
-        configureDataSource()
-        dataSource.applySnapshot(animatingDifferences: false)
-        groceryName.text = folder.products
-        folder.products.forEach{product in groceryName.text = product.name}
+        applySnapshot(animatingDifferences: false)
+//        groceryName.text = grocery.name
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,12 +55,34 @@ class GroceryListViewController: UITableViewController, UISearchBarDelegate{
     required init?(coder: NSCoder) {
         fatalError("This should never be called!")
     }
+
+    init?(coder: NSCoder, folder: GroceryFolder){
+        self.grocery = folder.products
+            super.init(coder: coder)
+        }
     
-    init?(coder: NSCoder, folder: Folders){
-        self.folder = folder
-        super.init(coder: coder)
+    
+    // MARK: - Functions
+    func configureDataSource() -> ProductDataSource {
+                let dataSource = ProductDataSource(tableView: tableView, cellProvider: { (
+                    tableView, indexPath, grocery) -> UITableViewCell? in
+                  let cell = tableView.dequeueReusableCell(withIdentifier: "GroceryListCell", for: indexPath)
+                                        cell.textLabel?.text = grocery.name
+                                        return cell
+                })
+        return dataSource
     }
     
+    
+    // 1
+    func applySnapshot(animatingDifferences: Bool = true) {
+        var snapshot = Snapshot()
+           snapshot.appendSections(Section.allCases)
+       
+             snapshot.appendItems(grocery)
+       
+        dataSource.apply(snapshot, animatingDifferences: true)
+    }
 //    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        Products.groceries.count
 //    }
@@ -70,15 +94,15 @@ class GroceryListViewController: UITableViewController, UISearchBarDelegate{
 //        return cell
 //    }
     //MARK :- Data Source
-    func configureDataSource(){
-        dataSource = ProductDataSource(tableView: tableView){
-            tableView, indexPath, grocery -> UITableViewCell? in
-          let cell = tableView.dequeueReusableCell(withIdentifier: "GroceryListCell", for: indexPath)
-                                cell.textLabel?.text = grocery.name
-                                return cell
-        }
-        
-    }
+//    func configureDataSource(){
+//        dataSource = ProductDataSource(tableView: tableView){
+//            tableView, indexPath, grocery -> UITableViewCell? in
+//          let cell = tableView.dequeueReusableCell(withIdentifier: "GroceryListCell", for: indexPath)
+//                                cell.textLabel?.text = grocery.name
+//                                return cell
+//        }
+//
+//    }
         
     private func createSearchBar(){
         navigationItem.hidesSearchBarWhenScrolling = false
@@ -108,19 +132,19 @@ class GroceryListViewController: UITableViewController, UISearchBarDelegate{
 
 
 
-class ProductDataSource: UITableViewDiffableDataSource<Section, GroceryProducts> {
-    var newSnapshot = NSDiffableDataSourceSnapshot<Section, GroceryProducts>()
-    func applySnapshot(animatingDifferences: Bool = true) {
-    newSnapshot.appendSections(Section.allCases)
-   
-      newSnapshot.appendItems(Products.groceries)
-      
-      apply(newSnapshot, animatingDifferences: true)
-      
-          }
-
-  
-}
+//class ProductDataSource: UITableViewDiffableDataSource<Section, GroceryProducts> {
+//    var newSnapshot = NSDiffableDataSourceSnapshot<Section, GroceryProducts>()
+//    func applySnapshot(animatingDifferences: Bool = true) {
+//    newSnapshot.appendSections(Section.allCases)
+//
+//      newSnapshot.appendItems(Products.groceries)
+//
+//      apply(newSnapshot, animatingDifferences: true)
+//
+//          }
+//
+//
+//}
 //class LibraryDataSource: UITableViewDiffableDataSource<Section, Book> {
 //    func update(){
 //        var newSnapshot = NSDiffableDataSourceSnapshot<Section, Book>()

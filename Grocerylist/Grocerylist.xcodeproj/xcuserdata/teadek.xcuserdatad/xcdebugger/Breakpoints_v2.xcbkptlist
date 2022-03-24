@@ -46,8 +46,8 @@
             filePath = "Grocerylist/GroceryListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "numberOfSections(in:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "Grocerylist/GroceryListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,10 +78,10 @@
             filePath = "Grocerylist/GroceryListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "ProductDataSource"
-            landmarkType = "3">
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   uuid = "3F224111-E384-44EE-B757-350C942DBFC3 - e7349c705c26072a"
@@ -134,129 +134,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5F26BF1E-892D-41B7-B8DD-8ED0DF98DD61"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Grocerylist/GroceryListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "GroceryListViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "5F26BF1E-892D-41B7-B8DD-8ED0DF98DD61 - 780ed16166f7181b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Grocerylist.GroceryListViewController.dataSource.getter : Swift.Optional&lt;Grocerylist.ProductDataSource&gt;"
-                  moduleName = "Grocerylist"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/teadek/Documents/GitHub/DGL214-final-project/Grocerylist/Grocerylist/GroceryListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "94">
-               </Location>
-               <Location
-                  uuid = "5F26BF1E-892D-41B7-B8DD-8ED0DF98DD61 - eb1ce2cccf28ce0f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Grocerylist.GroceryListViewController.dataSource.setter : Swift.Optional&lt;Grocerylist.ProductDataSource&gt;"
-                  moduleName = "Grocerylist"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/teadek/Documents/GitHub/DGL214-final-project/Grocerylist/Grocerylist/GroceryListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "132">
-               </Location>
-               <Location
-                  uuid = "5F26BF1E-892D-41B7-B8DD-8ED0DF98DD61 - 6a225907360259e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Grocerylist.GroceryListViewController.dataSource.modify : Swift.Optional&lt;Grocerylist.ProductDataSource&gt;"
-                  moduleName = "Grocerylist"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/teadek/Documents/GitHub/DGL214-final-project/Grocerylist/Grocerylist/GroceryListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  uuid = "5F26BF1E-892D-41B7-B8DD-8ED0DF98DD61 - 6066def534c5cfa5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Grocerylist.GroceryListViewController.dataSource.modify : Swift.Optional&lt;Grocerylist.ProductDataSource&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "Grocerylist"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/teadek/Documents/GitHub/DGL214-final-project/Grocerylist/Grocerylist/GroceryListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "15">
-               </Location>
-               <Location
-                  uuid = "5F26BF1E-892D-41B7-B8DD-8ED0DF98DD61 - 8232d9701b9247e5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Grocerylist.GroceryListViewController.init(style: __C.UITableViewStyle) -&gt; Grocerylist.GroceryListViewController"
-                  moduleName = "Grocerylist"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/teadek/Documents/GitHub/DGL214-final-project/Grocerylist/Grocerylist/GroceryListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "74">
-               </Location>
-               <Location
-                  uuid = "5F26BF1E-892D-41B7-B8DD-8ED0DF98DD61 - b0a080bdbb0d02cf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Grocerylist.GroceryListViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Grocerylist.GroceryListViewController"
-                  moduleName = "Grocerylist"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/teadek/Documents/GitHub/DGL214-final-project/Grocerylist/Grocerylist/GroceryListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "127">
-               </Location>
-               <Location
-                  uuid = "5F26BF1E-892D-41B7-B8DD-8ED0DF98DD61 - 3c35305609f567e6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Grocerylist.GroceryListViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Grocerylist.GroceryListViewController&gt;"
-                  moduleName = "Grocerylist"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/teadek/Documents/GitHub/DGL214-final-project/Grocerylist/Grocerylist/GroceryListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "84">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "19330B26-27D4-466D-82C7-A0C192C67CB1"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -264,9 +141,25 @@
             filePath = "Grocerylist/GroceryListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "configureDataSource()"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "GroceryListViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4A1990E7-675E-462E-A57E-734E1CF89249"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Grocerylist/GroceryListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "init?(coder:folder:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

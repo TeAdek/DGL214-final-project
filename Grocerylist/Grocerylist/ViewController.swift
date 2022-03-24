@@ -23,14 +23,13 @@ class GroceryFolderViewController: UITableViewController {
 
     var dataSource: FolderDataSource!
     
-//    @IBSegueAction func showGroceryList(_ coder: NSCoder) -> GroceryListViewController? {
-//           guard let indexPath = tableView.indexPathForSelectedRow,
-//                 let folder = dataSource.itemIdentifier(for: indexPath) else{
-//               fatalError()
-//           }
-//           return GroceryListViewController(coder: coder, book: folder)
-//       }
-    
+    @IBSegueAction func showGroceryList(_ coder: NSCoder) -> GroceryListViewController? {
+        guard let indexPath = tableView.indexPathForSelectedRow,
+              let folder = dataSource.itemIdentifier(for: indexPath) else{
+            fatalError()
+        }
+        return GroceryListViewController(coder: coder, folder: folder)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -50,7 +49,7 @@ class GroceryFolderViewController: UITableViewController {
         dataSource = FolderDataSource(tableView: tableView){
             tableView, indexPath, folder-> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: "FolderCell", for: indexPath)
-            cell.textLabel?.text = folder.title
+            cell.textLabel?.text = folder.title //Actually display the text on table
             return cell
     }
   
@@ -64,7 +63,7 @@ class FolderDataSource: UITableViewDiffableDataSource<mainSection, GroceryFolder
     newSnapshot.appendSections(mainSection.allCases)
       ////////QUESTION
       let folders = Folders.folders
-      newSnapshot.appendItems(folders)
+      newSnapshot.appendItems(folders) //Must in array form
     apply(newSnapshot, animatingDifferences: animatingDifferences)
   }
   
