@@ -22,6 +22,8 @@
 		4684D37327DA68AB009B1830 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4684D37227DA68AB009B1830 /* SearchResultsViewController.swift */; };
 		4684D37727DA848C009B1830 /* GroceryProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4684D37627DA848C009B1830 /* GroceryProducts.swift */; };
 		469894A927E139CE0010C2DF /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469894A827E139CE0010C2DF /* Products.swift */; };
+		469894AB27EBFB370010C2DF /* GroceryFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469894AA27EBFB370010C2DF /* GroceryFolder.swift */; };
+		469894AD27EC1B9E0010C2DF /* Folders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469894AC27EC1B9E0010C2DF /* Folders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		4684D37227DA68AB009B1830 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		4684D37627DA848C009B1830 /* GroceryProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryProducts.swift; sourceTree = "<group>"; };
 		469894A827E139CE0010C2DF /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		469894AA27EBFB370010C2DF /* GroceryFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryFolder.swift; sourceTree = "<group>"; };
+		469894AC27EC1B9E0010C2DF /* Folders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folders.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,8 @@
 				4684D37227DA68AB009B1830 /* SearchResultsViewController.swift */,
 				4684D37627DA848C009B1830 /* GroceryProducts.swift */,
 				469894A827E139CE0010C2DF /* Products.swift */,
+				469894AA27EBFB370010C2DF /* GroceryFolder.swift */,
+				469894AC27EC1B9E0010C2DF /* Folders.swift */,
 			);
 			path = Grocerylist;
 			sourceTree = "<group>";
@@ -279,9 +285,11 @@
 				4684D2FF27D9804A009B1830 /* ViewController.swift in Sources */,
 				4684D37327DA68AB009B1830 /* SearchResultsViewController.swift in Sources */,
 				469894A927E139CE0010C2DF /* Products.swift in Sources */,
+				469894AB27EBFB370010C2DF /* GroceryFolder.swift in Sources */,
 				4684D2FB27D9804A009B1830 /* AppDelegate.swift in Sources */,
 				4684D36D27D9F0BD009B1830 /* GroceryListViewController.swift in Sources */,
 				4684D2FD27D9804A009B1830 /* SceneDelegate.swift in Sources */,
+				469894AD27EC1B9E0010C2DF /* Folders.swift in Sources */,
 				4684D37727DA848C009B1830 /* GroceryProducts.swift in Sources */,
 				4684D32D27D9CB5A009B1830 /* APIResponse.swift in Sources */,
 				4684D32B27D9B999009B1830 /* APICaller.swift in Sources */,

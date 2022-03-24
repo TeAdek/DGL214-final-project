@@ -46,6 +46,15 @@ class GroceryListViewController: UITableViewController, UISearchBarDelegate{
         1
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("This should never be called!")
+    }
+    
+    init?(coder: NSCoder, folder: GroceryFolder){
+        self.folder = folder
+        super.init(coder: coder)
+    }
+    
 //    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        Products.groceries.count
 //    }
