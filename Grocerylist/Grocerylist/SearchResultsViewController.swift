@@ -45,8 +45,8 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.deselectRow(at: indexPath, animated: true)
         let result = results[indexPath.row]
         print("ANSWER \(result.name)")
-        Products.addNew(grocery: GroceryProducts(name: result.name, identifer: result.identifer, categories: false))
-        navigationController?.popViewController(animated: true)
+        Folders.addNewGrocery(grocery: GroceryProducts(name: result.name, categories: false), index: 1)
+        tableView.isHidden = true
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

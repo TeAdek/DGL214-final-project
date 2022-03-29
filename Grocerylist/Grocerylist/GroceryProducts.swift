@@ -9,7 +9,6 @@ import Foundation
 
 struct GroceryProducts: Hashable{
     let name: String
-    let identifer: Int
     let categories: Bool
 
 }
@@ -17,7 +16,6 @@ struct GroceryProducts: Hashable{
 extension GroceryProducts: Codable, Equatable{
     enum CodingKeys: String, CodingKey {
         case name
-        case identifer
         case categories
     }
 }

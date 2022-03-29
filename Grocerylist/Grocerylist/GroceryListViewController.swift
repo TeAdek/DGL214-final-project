@@ -35,17 +35,15 @@ class GroceryListViewController: UITableViewController, UISearchBarDelegate{
         
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         createSearchBar()
         applySnapshot(animatingDifferences: false)
-//        groceryName.text = grocery.name
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        applySnapshot(animatingDifferences: true)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

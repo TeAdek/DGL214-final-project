@@ -28,8 +28,10 @@ class GroceryFolderViewController: UITableViewController {
               let folder = dataSource.itemIdentifier(for: indexPath) else{
             fatalError()
         }
+        print(indexPath)
         return GroceryListViewController(coder: coder, folder: folder)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -37,6 +39,16 @@ class GroceryFolderViewController: UITableViewController {
         view.backgroundColor = .systemGreen
         configureDataSource()
         dataSource.update()
+        }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "Folder View"){
+            print("TESTING")
+        }
+    }
+    
+    @IBAction func unwindToFirstViewController(_ sender: UIStoryboardSegue) {
+         // No code needed, no need to connect the IBAction explicitely
         }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,7 +64,6 @@ class GroceryFolderViewController: UITableViewController {
             cell.textLabel?.text = folder.title //Actually display the text on table
             return cell
     }
-  
 }
 }
 
@@ -60,8 +71,7 @@ class FolderDataSource: UITableViewDiffableDataSource<mainSection, GroceryFolder
   func update( animatingDifferences: Bool = true) {
     
     var newSnapshot = NSDiffableDataSourceSnapshot<mainSection, GroceryFolder>()
-    newSnapshot.appendSections(mainSection.allCases)
-      ////////QUESTION
+      newSnapshot.appendSections([.main])
       let folders = Folders.folders
       newSnapshot.appendItems(folders) //Must in array form
     apply(newSnapshot, animatingDifferences: animatingDifferences)

@@ -31,9 +31,9 @@ import UIKit
 
 enum Folders {
     private static let starterData : [GroceryFolder] = [
-        GroceryFolder(title: "Expired", products: [ GroceryProducts(name: "milk", identifer: 12344, categories: true), GroceryProducts(name: "egg", identifer: 1234467, categories: true)
+        GroceryFolder(title: "Expired", products: [ GroceryProducts(name: "milk", categories: true), GroceryProducts(name: "egg", categories: true)
                                           
-    ]),  GroceryFolder(title: "New", products: [ GroceryProducts(name: "yam", identifer: 123448, categories: true), GroceryProducts(name: "butter", identifer: 12344867, categories: true) ])
+    ]),  GroceryFolder(title: "New", products: [ GroceryProducts(name: "yam", categories: true), GroceryProducts(name: "butter", categories: true) ])
   ]
     
       static var folders: [GroceryFolder] = loadFolders()
@@ -74,14 +74,14 @@ enum Folders {
         }
       }
     
-    
-        static func addNew(folder: GroceryFolder) {
+    //FOLDER METHOD
+        static func addNewFolder(folder: GroceryFolder) {
        folders.insert(folder, at: 0)
         saveAllFolders()
       }
     
     
-      static func update(folder: GroceryFolder) {
+      static func updateFolder(folder: GroceryFolder) {
     
         guard let folderIndex = folders.firstIndex(where: { storedFolder in
           folder.title == storedFolder.title } )
@@ -95,7 +95,7 @@ enum Folders {
       }
     
       
-      static func delete(folder: GroceryFolder) {
+      static func deleteFolder(folder: GroceryFolder) {
         guard let folderIndex = folders.firstIndex(where: { storedFolder in
           folder == storedFolder } )
           else { return }
@@ -105,6 +105,37 @@ enum Folders {
         saveAllFolders()
       }
     
+    //PRODUCT METHOD
+    static func addNewGrocery(grocery: GroceryProducts, index: Int) {
+        folders[index].products.insert(grocery, at: 0)
+    saveAllFolders()
+  }
+
+
+  static func updateGrocery(grocery: GroceryProducts, index: Int) {
+
+      guard let groceryIndex =  folders[index].products.firstIndex(where: { storedGrocery in
+          grocery.name == storedGrocery.name } )
+    else {
+        print("No grocery to update")
+        return
+    }
+
+      folders[index].products[groceryIndex] = grocery
+    saveAllFolders()
+  }
+
+  
+  static func deleteFolder(grocery: GroceryProducts, index: Int) {
+      guard let groceryIndex =  folders[index].products.firstIndex(where: { storedGrocery in
+          grocery == storedGrocery } )
+    else {
+        return
+      }
+      folders[index].products.remove(at: groceryIndex)
+
+    saveAllFolders()
+  }
 }
 //enum Folders {
 //  private static let starterData = [
@@ -183,9 +214,9 @@ enum Folders {
 //
 //}
 
-//extension FileManager {
-//  static var documentDirectoryURL: URL {
-//    return `default`.urls(for: .documentDirectory, in: .userDomainMask)[0]
-//  }
-//}
+extension FileManager {
+  static var documentDirectoryURL: URL {
+    return `default`.urls(for: .documentDirectory, in: .userDomainMask)[0]
+  }
+}
 

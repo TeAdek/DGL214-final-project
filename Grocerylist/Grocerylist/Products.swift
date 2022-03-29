@@ -9,8 +9,8 @@ import UIKit
 
 enum Products {
     private static let starterData = [
-        GroceryProducts(name: "Apple", identifer: 12345, categories: true),
-        GroceryProducts(name: "Orange", identifer: 234567, categories: false)
+        GroceryProducts(name: "Apple", categories: true),
+        GroceryProducts(name: "Orange", categories: false)
     ]
     
     static var groceries: [GroceryProducts] = loadGroceries()
@@ -33,7 +33,6 @@ enum Products {
           return products.map { GroceryList in
             GroceryProducts(
               name: GroceryList.name,
-              identifer: GroceryList.identifer,
               categories: GroceryList.categories
             )
           }
@@ -87,11 +86,11 @@ enum Products {
     
 }
 
-extension FileManager {
-  static var documentDirectoryURL: URL {
-    return `default`.urls(for: .documentDirectory, in: .userDomainMask)[0]
-  }
-}
+//extension FileManager {
+//  static var documentDirectoryURL: URL {
+//    return `default`.urls(for: .documentDirectory, in: .userDomainMask)[0]
+//  }
+//}
 
 //    @IBAction func addMercury(_ sender: UIButton) {
 //        self.data.insert("mercury", at: 0)
