@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol SearchResultsViewControllerDelegate: AnyObject{
+    func logData(_ result: String)
+}
+
 class SearchResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     private var results: [GroceryProducts] = []
@@ -17,6 +21,8 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.isHidden = true
         return tableView
     }()
+    
+    weak var delegate: (SearchResultsViewControllerDelegate)?
     
     override func viewDidLoad() {
         super.viewDidLoad()

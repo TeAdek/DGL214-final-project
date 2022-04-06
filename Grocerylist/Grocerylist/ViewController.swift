@@ -15,7 +15,7 @@ import UIKit
 //When click return enter text in grocerylist
 //When suggestion is selected, group grocerylist
 
-enum mainSection: String, CaseIterable{
+enum mainSection: String{
     case main
 }
 
@@ -32,6 +32,7 @@ class GroceryFolderViewController: UITableViewController {
         return GroceryListViewController(coder: coder, folder: folder)
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -41,10 +42,9 @@ class GroceryFolderViewController: UITableViewController {
         dataSource.update()
         }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "Folder View"){
-            print("TESTING")
-        }
+
+    @IBAction func saveFolderName(_ segue: UIStoryboardSegue) {
+        dataSource.update()
     }
     
     @IBAction func unwindToFirstViewController(_ sender: UIStoryboardSegue) {
@@ -77,41 +77,6 @@ class FolderDataSource: UITableViewDiffableDataSource<mainSection, GroceryFolder
     apply(newSnapshot, animatingDifferences: animatingDifferences)
   }
   
-//  override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//      indexPath.section == snapshot().indexOfSection(.addNew) ? false : true
-//  }
-//
-//  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//    if editingStyle == .delete {
-//      guard let book = self.itemIdentifier(for: indexPath) else { return }
-//      Library.delete(book: book)
-//      update(sortStyle: currentSortStyle)
-//    }
-//  }
-//
-//  override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-//      if indexPath.section != snapshot().indexOfSection(.readMe)
-//      || currentSortStyle != .readMe {
-//      return false
-//      } else {
-//      return true
-//      }
-//
-//  }
-//      override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-//          guard
-//            sourceIndexPath != destinationIndexPath,
-//            sourceIndexPath.section == destinationIndexPath.section,
-//            let bookToMove = itemIdentifier(for: sourceIndexPath),
-//            let bookAtDestination = itemIdentifier(for: destinationIndexPath)
-//          else {
-//            apply(snapshot(), animatingDifferences: false)
-//            return
-//          }
-//
-//          Library.reorderBooks(bookToMove: bookToMove, bookAtDestination: bookAtDestination)
-//          update(sortStyle: currentSortStyle, animatingDifferences: false)
-//        }
 }
 
 

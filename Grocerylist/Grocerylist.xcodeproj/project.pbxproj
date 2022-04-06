@@ -21,7 +21,6 @@
 		4684D36D27D9F0BD009B1830 /* GroceryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4684D36C27D9F0BD009B1830 /* GroceryListViewController.swift */; };
 		4684D37327DA68AB009B1830 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4684D37227DA68AB009B1830 /* SearchResultsViewController.swift */; };
 		4684D37727DA848C009B1830 /* GroceryProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4684D37627DA848C009B1830 /* GroceryProducts.swift */; };
-		469894A927E139CE0010C2DF /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469894A827E139CE0010C2DF /* Products.swift */; };
 		469894AB27EBFB370010C2DF /* GroceryFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469894AA27EBFB370010C2DF /* GroceryFolder.swift */; };
 		469894AD27EC1B9E0010C2DF /* Folders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469894AC27EC1B9E0010C2DF /* Folders.swift */; };
 		469894AF27ED6E290010C2DF /* CreateFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469894AE27ED6E290010C2DF /* CreateFolderViewController.swift */; };
@@ -63,7 +62,6 @@
 		4684D36C27D9F0BD009B1830 /* GroceryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListViewController.swift; sourceTree = "<group>"; };
 		4684D37227DA68AB009B1830 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		4684D37627DA848C009B1830 /* GroceryProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryProducts.swift; sourceTree = "<group>"; };
-		469894A827E139CE0010C2DF /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		469894AA27EBFB370010C2DF /* GroceryFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryFolder.swift; sourceTree = "<group>"; };
 		469894AC27EC1B9E0010C2DF /* Folders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folders.swift; sourceTree = "<group>"; };
 		469894AE27ED6E290010C2DF /* CreateFolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +92,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		466EC69427FC999C00EA294A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4684D37627DA848C009B1830 /* GroceryProducts.swift */,
+				469894AA27EBFB370010C2DF /* GroceryFolder.swift */,
+				469894AC27EC1B9E0010C2DF /* Folders.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		466EC69527FC99B200EA294A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		466EC69627FC99C100EA294A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		4684D2EE27D9804A009B1830 = {
 			isa = PBXGroup;
 			children = (
@@ -128,10 +150,9 @@
 				4684D32A27D9B999009B1830 /* APICaller.swift */,
 				4684D32C27D9CB5A009B1830 /* APIResponse.swift */,
 				4684D37227DA68AB009B1830 /* SearchResultsViewController.swift */,
-				4684D37627DA848C009B1830 /* GroceryProducts.swift */,
-				469894A827E139CE0010C2DF /* Products.swift */,
-				469894AA27EBFB370010C2DF /* GroceryFolder.swift */,
-				469894AC27EC1B9E0010C2DF /* Folders.swift */,
+				466EC69427FC999C00EA294A /* Model */,
+				466EC69527FC99B200EA294A /* View */,
+				466EC69627FC99C100EA294A /* Controller */,
 				469894AE27ED6E290010C2DF /* CreateFolderViewController.swift */,
 			);
 			path = Grocerylist;
@@ -287,7 +308,6 @@
 			files = (
 				4684D2FF27D9804A009B1830 /* ViewController.swift in Sources */,
 				4684D37327DA68AB009B1830 /* SearchResultsViewController.swift in Sources */,
-				469894A927E139CE0010C2DF /* Products.swift in Sources */,
 				469894AB27EBFB370010C2DF /* GroceryFolder.swift in Sources */,
 				469894AF27ED6E290010C2DF /* CreateFolderViewController.swift in Sources */,
 				4684D2FB27D9804A009B1830 /* AppDelegate.swift in Sources */,

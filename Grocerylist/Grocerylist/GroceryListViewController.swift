@@ -17,7 +17,14 @@ enum Section: String, CaseIterable{
     case finished = "Finished"
 }
 
-class GroceryListViewController: UITableViewController, UISearchBarDelegate{
+class GroceryListViewController: UITableViewController, UISearchBarDelegate, SearchResultsViewControllerDelegate{
+    
+    func logData(_ result: String) {
+        print("Query result: \(result)")
+        grocery.append(GroceryProducts(name: result, categories: true))
+        applySnapshot()
+    }
+    
 //    var dataSource: ProductDataSource!
     var grocery: [GroceryProducts]
 //    @IBOutlet var groceryName: UILabel!
@@ -113,6 +120,7 @@ class GroceryListViewController: UITableViewController, UISearchBarDelegate{
         let query = searchBar.text, !query.isEmpty else {
             return
         }
+        resultsController.delegate = self
         APICaller.shared.search(with: query){ result in
             DispatchQueue.main.async {
                 switch result {

@@ -46,7 +46,7 @@
                     <navigationItem key="navigationItem" id="uu2-ah-aRF">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="gfy-hK-ZYn">
                             <connections>
-                                <segue destination="q4m-Ji-CP9" kind="showDetail" id="gnj-xH-d51"/>
+                                <segue destination="q4m-Ji-CP9" kind="showDetail" destinationCreationSelector="createFolderName:" id="gnj-xH-d51"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -109,7 +109,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Create"/>
                                         <connections>
-                                            <action selector="createFolder:" destination="q4m-Ji-CP9" eventType="touchUpInside" id="6yb-dD-wUM"/>
+                                            <segue destination="x4c-xX-4Ep" kind="unwind" identifier="SaveFolderName" unwindAction="saveFolderName:" id="e3u-kP-pox"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nB6-ZW-hAT">

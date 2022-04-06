@@ -9,16 +9,14 @@ import UIKit
 
 struct GroceryFolder: Hashable {
     var id = UUID()
-    // 2
-    var title: String
-    // 3
+    var title: String = ""
     var products: [GroceryProducts]
     
     init(title: String, products: [GroceryProducts]) {
       self.title = title
       self.products = products
     }
-    // 4
+
     func hash(into hasher: inout Hasher) {
       hasher.combine(id)
     }
@@ -33,6 +31,6 @@ extension GroceryFolder: Codable{
         case title
         case products
     }
-    }
+}
 
 
