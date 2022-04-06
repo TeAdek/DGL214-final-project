@@ -77,6 +77,17 @@ class FolderDataSource: UITableViewDiffableDataSource<mainSection, GroceryFolder
     apply(newSnapshot, animatingDifferences: animatingDifferences)
   }
   
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+      if editingStyle == .delete {
+        guard let folder = self.itemIdentifier(for: indexPath) else { return }
+          Folders.deleteFolder(folder: folder)
+          update()
+      }
+    }
 }
 
 
