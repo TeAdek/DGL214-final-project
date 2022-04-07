@@ -11,12 +11,7 @@ struct GroceryFolder: Hashable {
     var id = UUID()
     var title: String = ""
     var products: [GroceryProducts]
-    
-    init(title: String, products: [GroceryProducts]) {
-      self.title = title
-      self.products = products
-    }
-
+   
     func hash(into hasher: inout Hasher) {
       hasher.combine(id)
     }

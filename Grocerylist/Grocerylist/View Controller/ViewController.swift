@@ -51,10 +51,7 @@ class GroceryFolderViewController: UITableViewController {
          // No code needed, no need to connect the IBAction explicitely
         }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        dataSource.update()
-    }
+
     
     //MARK :- Data Source
     func configureDataSource(){

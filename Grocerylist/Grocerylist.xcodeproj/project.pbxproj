@@ -105,15 +105,29 @@
 		466EC69527FC99B200EA294A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4684D30027D9804A009B1830 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		466EC69627FC99C100EA294A /* Controller */ = {
+		466EC69627FC99C100EA294A /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4684D36C27D9F0BD009B1830 /* GroceryListViewController.swift */,
+				4684D37227DA68AB009B1830 /* SearchResultsViewController.swift */,
+				469894AE27ED6E290010C2DF /* CreateFolderViewController.swift */,
+				4684D2FE27D9804A009B1830 /* ViewController.swift */,
 			);
-			path = Controller;
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		466EC71D27FE2ADB00EA294A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4684D32C27D9CB5A009B1830 /* APIResponse.swift */,
+				4684D32A27D9B999009B1830 /* APICaller.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		4684D2EE27D9804A009B1830 = {
@@ -139,21 +153,15 @@
 		4684D2F927D9804A009B1830 /* Grocerylist */ = {
 			isa = PBXGroup;
 			children = (
-				4684D36C27D9F0BD009B1830 /* GroceryListViewController.swift */,
 				4684D2FA27D9804A009B1830 /* AppDelegate.swift */,
 				4684D2FC27D9804A009B1830 /* SceneDelegate.swift */,
-				4684D2FE27D9804A009B1830 /* ViewController.swift */,
-				4684D30027D9804A009B1830 /* Main.storyboard */,
 				4684D30327D9804C009B1830 /* Assets.xcassets */,
 				4684D30527D9804C009B1830 /* LaunchScreen.storyboard */,
 				4684D30827D9804C009B1830 /* Info.plist */,
-				4684D32A27D9B999009B1830 /* APICaller.swift */,
-				4684D32C27D9CB5A009B1830 /* APIResponse.swift */,
-				4684D37227DA68AB009B1830 /* SearchResultsViewController.swift */,
+				466EC71D27FE2ADB00EA294A /* API */,
 				466EC69427FC999C00EA294A /* Model */,
 				466EC69527FC99B200EA294A /* View */,
-				466EC69627FC99C100EA294A /* Controller */,
-				469894AE27ED6E290010C2DF /* CreateFolderViewController.swift */,
+				466EC69627FC99C100EA294A /* View Controller */,
 			);
 			path = Grocerylist;
 			sourceTree = "<group>";

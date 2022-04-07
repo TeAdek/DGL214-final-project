@@ -32,8 +32,10 @@ final class APICaller {
         let task = URLSession.shared.dataTask(with: url){data, _, error in if let error = error {
             completion(.failure(error))
         }
+            // Check if there is any data
             else if let data = data {
                 do{
+                    // Make the data readable
                     let result = try JSONDecoder().decode(APIResponse.self, from: data)
                     //QUESTION???
                     let searchResults: [GroceryProducts] = result.results.compactMap({GroceryProducts( name: $0.title, categories: true)})
